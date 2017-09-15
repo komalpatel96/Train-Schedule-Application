@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Train Schedule</title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <!-- LINK TO FIREBASE GOES HERE -->
+<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+</head>
+<body>
+  <div class="container">
+
+    <br>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+      <h1 class="text-center">Any Time is Train Time!</h1>
+      <p>Choo Choo!</p>
+    </div>
+
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Current Train Schedule:</h3>
+          </div>
+          <div class="panel-body" id="train-schedule">
+          	<table class="table" id="trainTable">
+          		<thead>
+	          		<tr>
+	          			<th>Train</th>
+	          			<th>Destination</th>
+	          			<th>Frequency</th>
+	          			<th>Next Arrival</th>
+	          			<th>Minutes Away</th>
+	          		</tr>
+          		</thead>
+				<tbody>
+					
+				</tbody>
+          	</table>
+          </div>
+        </div>
+      </div>	
+
+<!--Adding New Trains-->
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Add Train</h3>
+          </div>
+          <div class="panel-body">
+
+            <!-- Sign-up Form (note the various input "types")-->
+
+            <form role="form">
+              <div class="form-group">
+                <label for="trainName-input">Train Name:</label>
+                <input class="form-control" id="trainName-input" type="text">
+              </div>
+
+              <div class="form-group">
+                <label for="destination-input">Destination:</label>
+                <input class="form-control" id="destination-input" type="text">
+              </div>
+
+              <div class="form-group">
+                <label for="firstTrain-input">First Train Time (HH:mm - military time):</label>
+                <input class="form-control" id="firstTrain-input" type="text">
+              </div>
+
+              <div class="form-group">
+                <label for="frequency-input">Frequency:</label>
+                <input class="form-control" id="frequency-input" type="text">
+              </div>
+              <button class="btn btn-default" id="addTrainButton" type="submit">Submit </button>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Most Recent Member Panel -->
+      
+
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+  <!-- jQuery -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+</html>
