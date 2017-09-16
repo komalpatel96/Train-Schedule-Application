@@ -47,21 +47,23 @@ $(document).ready(function(){
 
 
 		// assign firebase variables to snapshots.
-		var trainName = childSnapshot.val().name;
+		var name = childSnapshot.val().name;
 		var destination = childSnapshot.val().destination;
-		var firstTrain = childSnapshot.val().firstTrain;
+		var time = childSnapshot.val().time;
 		var frequency = childSnapshot.val().frequency;
 
+		console.log("Name: " + name);
+		console.log("Destination: " + destination);
+		console.log("Time: " + time);
+		console.log("Frequency: " + frequency);
+	//console.log(moment().format("HH:mm"));
+
 		var frequency = parseInt(frequency);
+		
 		var currentTime = moment();
+		console.log("curent time: " + moment().format("HH:mm")); //works
 
-		console.log("curent time: " + moment().format("HH:mm"));
-
-		//FIRST TIME: PUSHED BACK ONE YEAR TO COME BEFORE CURRENT TIME
-		// var dConverted = moment(time,'hh:mm').subtract(1, 'years');
-		var dConverted = moment(childSnapshot.val().firstTrainInput, 'HH:mm').subtract(1, 'years');
-		console.log("DATE CONVERTED: " + dConverted);
-		var trainTime = moment(dConverted).format('HH:mm');
+		var trainTime = moment(time).format('HH:mm');
 		console.log("TRAIN TIME : " + trainTime);
 		
 		//DIFFERENCE B/T THE TIMES 
